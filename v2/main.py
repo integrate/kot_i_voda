@@ -1,3 +1,5 @@
+"""добавьте коту зонтик"""
+
 import time
 
 import view,controller

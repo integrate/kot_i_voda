@@ -26,12 +26,14 @@ def move_right():
 
 screen = pygame.display.get_surface()
 
+show_rects=True
+
 tom_rect = pygame.rect.Rect(600, 200, 167, 126)
 tom_rect.bottom = screen.get_height()
 
 umb_rect = pygame.rect.Rect(100, 200, 100, 100)
 bucket_rect = pygame.rect.Rect(100, 200, 60, 60)
 
-side = "right"
+side = "left"
 
-move_subjects_right()
+move_subjects_left()

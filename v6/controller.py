@@ -14,3 +14,5 @@ def process():
             model.move_left()
         if e.type == pygame.KEYDOWN and e.key == pygame.K_RIGHT:
             model.move_right()
+
+    model.show_rects = bool(pygame.key.get_pressed()[pygame.K_TAB])

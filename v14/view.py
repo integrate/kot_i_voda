@@ -15,6 +15,11 @@ bucket_left = pygame.image.load("../pics/bucket.png")
 bucket_left = pygame.transform.scale(bucket_left, model.bucket_rect.size)
 bucket_right = pygame.transform.flip(bucket_left, True, False)
 
+water = pygame.image.load("../pics/water.png")
+water = pygame.transform.scale(water, model.water_rect.size)
+
+raft = pygame.image.load("../pics/raft.png")
+raft = pygame.transform.scale(raft, model.raft_rect.size)
 
 def draw():
 
@@ -29,9 +34,16 @@ def draw():
         screen.blit(umb_right, model.umb_rect)
         screen.blit(bucket_right, model.bucket_rect)
 
+    screen.blit(water, model.water_rect)
+    pygame.draw.rect(screen, [52, 144, 193], model.under_water_rect)
+    screen.blit(raft, model.raft_rect)
+
     if model.show_rects:
         pygame.draw.rect(screen, [50, 100, 250], model.bucket_rect, 2)
         pygame.draw.rect(screen, [100, 200, 50], model.tom_rect, 2)
         pygame.draw.rect(screen, [200, 100, 50], model.umb_rect, 2)
+        pygame.draw.rect(screen, [130, 70, 50], model.water_rect, 2)
+        pygame.draw.rect(screen, [230, 170, 50], model.under_water_rect, 2)
+        pygame.draw.rect(screen, [230, 170, 250], model.raft_rect, 2)
 
     pygame.display.flip()

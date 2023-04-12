@@ -44,6 +44,12 @@ tom_rect.bottom = screen.get_height()
 umb_rect = pygame.rect.Rect(100, 200, 100, 100)
 bucket_rect = pygame.rect.Rect(100, 200, 60, 60)
 
+under_water_rect = pygame.rect.Rect(0, 0, screen.get_width(), 100)
+under_water_rect.bottom=screen.get_height()
+
+water_rect = pygame.rect.Rect(0, 0, screen.get_width(), 30)
+water_rect.bottom=under_water_rect.top
+
 side = "right"
 
 move_subjects_right()

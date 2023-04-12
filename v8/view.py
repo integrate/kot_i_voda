@@ -20,12 +20,6 @@ def draw():
 
     screen.fill([0, 0, 0])
 
-    pygame.draw.rect(screen, [100, 200, 50], model.tom_rect, 2)
-
-    pygame.draw.rect(screen, [200, 100, 50], model.umb_rect, 2)
-
-    pygame.draw.rect(screen, [50, 100, 250], model.bucket_rect, 2)
-
     if model.side=="left":
         screen.blit(tom_left, model.tom_rect)
         screen.blit(umb_left, model.umb_rect)
@@ -34,5 +28,10 @@ def draw():
         screen.blit(tom_right, model.tom_rect)
         screen.blit(umb_right, model.umb_rect)
         screen.blit(bucket_right, model.bucket_rect)
+
+    if model.show_rects:
+        pygame.draw.rect(screen, [50, 100, 250], model.bucket_rect, 2)
+        pygame.draw.rect(screen, [100, 200, 50], model.tom_rect, 2)
+        pygame.draw.rect(screen, [200, 100, 50], model.umb_rect, 2)
 
     pygame.display.flip()

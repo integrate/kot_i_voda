@@ -16,11 +16,7 @@ def process():
             model.move_right()
 
         if e.type == pygame.KEYDOWN and e.key == pygame.K_SPACE:
-            if model.side == "left":
-                model.side = "right"
-                model.move_subjects_right()
-            else:
-                model.side = "left"
-                model.move_subjects_left()
+            model.water_size = random.randint(30, 600)
+            model.make_water()
 
     model.show_rects = bool(pygame.key.get_pressed()[pygame.K_TAB])

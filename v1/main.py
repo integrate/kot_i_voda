@@ -1,3 +1,5 @@
+"""нарисуйте кота"""
+
 import time
 
 import view,controller

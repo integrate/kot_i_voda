@@ -17,12 +17,11 @@ def draw():
     screen.fill([0, 0, 0])
 
     screen.blit(tom, model.tom_rect)
-    # pygame.draw.rect(screen, [100, 200, 50], model.tom_rect, 2)
-
     screen.blit(umb, model.umb_rect)
-    # pygame.draw.rect(screen, [200, 100, 50], model.umb_rect, 2)
-
     screen.blit(bucket, model.bucket_rect)
-    # pygame.draw.rect(screen, [50, 100, 250], model.bucket_rect, 2)
 
+    if model.show_rects:
+        pygame.draw.rect(screen, [50, 100, 250], model.bucket_rect, 2)
+        pygame.draw.rect(screen, [100, 200, 50], model.tom_rect, 2)
+        pygame.draw.rect(screen, [200, 100, 50], model.umb_rect, 2)
     pygame.display.flip()

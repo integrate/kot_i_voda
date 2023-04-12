@@ -17,6 +17,8 @@ def move_right():
 
 screen = pygame.display.get_surface()
 
+show_rects=True
+
 tom_rect = pygame.rect.Rect(600, 200, 167, 126)
 tom_rect.bottom = screen.get_height()
 

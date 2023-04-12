@@ -34,6 +34,14 @@ def move_right():
         tom_rect.right = 782
     move_subjects_right()
 
+def make_water():
+    global under_water_rect, water_rect
+    under_water_rect = pygame.rect.Rect(0, 0, screen.get_width(), water_size - 30)
+    under_water_rect.bottom = screen.get_height()
+
+    water_rect = pygame.rect.Rect(0, 0, screen.get_width(), 30)
+    water_rect.bottom = under_water_rect.top
+
 screen = pygame.display.get_surface()
 
 show_rects=True
@@ -43,6 +51,14 @@ tom_rect.bottom = screen.get_height()
 
 umb_rect = pygame.rect.Rect(100, 200, 100, 100)
 bucket_rect = pygame.rect.Rect(100, 200, 60, 60)
+
+water_size = 30
+
+under_water_rect = pygame.rect.Rect(0, 0, screen.get_width(), water_size-30)
+under_water_rect.bottom=screen.get_height()
+
+water_rect = pygame.rect.Rect(0, 0, screen.get_width(), 30)
+water_rect.bottom=under_water_rect.top
 
 side = "right"
 
