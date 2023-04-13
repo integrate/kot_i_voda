@@ -19,10 +19,8 @@ def process():
             model.move_right()
 
         if e.type == cloud_timer:
-            model.cloud_change()
-
-        if e.type == pygame.KEYDOWN and e.key == pygame.K_SPACE:
-            model.water_size = random.randint(30, 600)
-            model.make_water()
+            r = random.randint(1, 2)
+            if r==1:
+                model.cloud_speed=-model.cloud_speed
 
     model.show_rects = bool(pygame.key.get_pressed()[pygame.K_TAB])

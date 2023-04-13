@@ -40,22 +40,36 @@ def move_right():
 
 
 def cloud_change():
-    global cloud_speed
+    global cloud_speed, drop_rect, drop_rect_visible
     r = random.randint(1, 2)
     if r == 1:
         cloud_speed = -cloud_speed
+
+    drop_rect_visible = True
     drop_rect.top = cloud_rect.bottom
     drop_rect.centerx = cloud_rect.centerx
 
+
 def go_go_go():
-    global cloud_speed
+    global cloud_speed, water_size, drop_rect_visible, drop_count
     cloud_rect.left+=cloud_speed
     if cloud_rect.left<0:
         cloud_speed =-cloud_speed
     if cloud_rect.right>screen.get_width():
         cloud_speed =-cloud_speed
 
-    drop_rect.y+=2
+    drop_rect.y+=3
+    if drop_rect_visible:
+        if drop_rect.colliderect(water_rect):
+            water_size+=3
+            drop_rect_visible=False
+            make_water()
+        elif drop_rect.colliderect(umb_rect):
+            drop_rect_visible = False
+        elif drop_rect.colliderect(bucket_rect):
+            drop_rect_visible = False
+            drop_count+=1
+
 
 def make_water():
     global under_water_rect, water_rect
@@ -86,7 +100,10 @@ bucket_rect = pygame.rect.Rect(100, 200, 60, 60)
 cloud_rect = pygame.rect.Rect(100, 30, 90, 60)
 cloud_speed = 1
 
-drop_rect = pygame.rect.Rect(100, 200, 15, 22)
+drop_rect = pygame.Rect(100, 200, 15, 22)
+drop_rect_visible = False
+
+drop_count = 0
 
 water_size = 30
 

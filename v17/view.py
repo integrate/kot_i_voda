@@ -45,14 +45,16 @@ def draw():
         screen.blit(bucket_right, model.bucket_rect)
 
     screen.blit(cloud, model.cloud_rect)
-    screen.blit(drop, model.drop_rect)
+    if model.drop_rect_visible:
+        screen.blit(drop, model.drop_rect)
 
     if model.show_rects:
         pygame.draw.rect(screen, [50, 100, 250], model.bucket_rect, 2)
         pygame.draw.rect(screen, [100, 200, 50], model.tom_rect, 2)
         pygame.draw.rect(screen, [200, 100, 50], model.umb_rect, 2)
         pygame.draw.rect(screen, [50, 250, 250], model.cloud_rect, 2)
-        pygame.draw.rect(screen, [50, 20, 250], model.drop_rect, 2)
+        if model.drop_rect_visible:
+            pygame.draw.rect(screen, [50, 20, 250], model.drop_rect, 2)
         pygame.draw.rect(screen, [130, 70, 50], model.water_rect, 2)
         pygame.draw.rect(screen, [230, 170, 50], model.under_water_rect, 2)
         pygame.draw.rect(screen, [230, 170, 250], model.raft_rect, 2)

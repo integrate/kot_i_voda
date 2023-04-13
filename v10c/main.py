@@ -1,11 +1,11 @@
 """
-кот должен стоять на плоту
+облако должно летать туда-сюда по экрану
 """
 
 
 import time
 
-import view,controller,model
+import view,controller, model
 
 while True:
     time.sleep(1/100)

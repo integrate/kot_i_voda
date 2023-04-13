@@ -1,11 +1,11 @@
 """
-кот должен стоять на плоту
+добавьте на экран каплю воды
 """
 
 
 import time
 
-import view,controller,model
+import view,controller, model
 
 while True:
     time.sleep(1/100)

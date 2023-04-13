@@ -1,11 +1,11 @@
 """
-кот должен стоять на плоту
+капля должна падать вниз
 """
 
 
 import time
 
-import view,controller,model
+import view,controller, model
 
 while True:
     time.sleep(1/100)
